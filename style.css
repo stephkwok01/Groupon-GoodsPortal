@@ -1,0 +1,12 @@
+#logo {
+	margin-top: -15px;
+	height:50px;
+	width: 200px;
+}
+.title {
+	color: green;
+}
+
+#submit {
+	float: right;
+}
