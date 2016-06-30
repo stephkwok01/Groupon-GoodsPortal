@@ -10,7 +10,7 @@ body{
 	width: 200px;
 }
 .title {
-	color: green;
+	color: #48A431;
 }
 
 #submit {
@@ -22,7 +22,7 @@ body{
 	width: 70px;
 	border-radius: 50px; 
 	background-color: white;
-	border: 1px solid green; 
+	border: 1px solid #48A431; 
 	margin-top: 50px;
 	display: inline-block;
 }
@@ -45,10 +45,10 @@ body{
 .between {
 	display: inline-block;
 	margin-bottom: 52px;
-	background-color: green;
+	background-color: #48A431;
 	height: 3px; 
 	width: 120px; 
-	border: 1px solid green; 
+	border: 1px solid #48A431; 
 }
 
 
