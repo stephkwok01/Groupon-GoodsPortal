@@ -1,4 +1,4 @@
-var app = angular.model("GrouponTrackApp", ["ngRoute"]);
+var app = angular.module("GrouponTrackApp", ["ngRoute"]);
 
 //config
 app.config(function($routeProvider) {
