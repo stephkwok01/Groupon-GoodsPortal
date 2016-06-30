@@ -14,42 +14,55 @@ body{
 }
 
 #submit {
-	float: right;
+	margin-left: 300px; 
 }
 
+/*progress page*/
 .progress {
-	height: 70px;
-	width: 70px;
+	height: 85px;
+	width: 85px;
 	border-radius: 50px; 
 	background-color: white;
 	border: 1px solid #48A431; 
 	margin-top: 50px;
 	display: inline-block;
 }
-.first {
-	margin-left: 100px;
+
+.track {
+	display: inline-block;
 }
 
 .steps {
-	margin-left: 110px;
-}
-
-.ordered{
-	margin-left: 148px; 
-}
-
-.fifth {
-	margin-right: 100px;
+	font-size: 12px; 
 }
 
 .between {
 	display: inline-block;
-	margin-bottom: 52px;
+	margin-bottom: 77px;
 	background-color: #48A431;
 	height: 3px; 
 	width: 120px; 
 	border: 1px solid #48A431; 
 }
+
+@media (max-width: 768px) {
+	.between {
+		visibility: hidden;
+	}
+	.track{
+		display: block;
+		margin-top: -120px;
+		margin-left: 0px; 
+		padding: 0;
+	}
+}
+
+@media (max-width: 1200px) and (min-width: 768px) {
+	.between{
+		width: 70px; 
+	}
+}
+
 
 
 
