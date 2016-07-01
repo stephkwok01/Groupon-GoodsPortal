@@ -11,24 +11,37 @@ app.config(function($routeProvider) {
   })
 }); //end of config
 
+var trackStatus = {};
+console.log(trackStatus);
 //home page controller
 app.controller("homeCtrl", function($scope,$location,$http,$window){
 
-
-});
-
-//portal page controller
-app.controller("portalCtrl", function($scope,$location,$http,$window){
-	$http({
+var URL = "https://private-anon-c529c0f64-parcelninja.apiary-mock.com/api/v1/tracking/";
+var finalUrl = URL + $scope.waybill;
+ $scope.trackOrder = function(string) {
+ 	$http({
 		method: "GET",
-		url: 'https://private-anon-c529c0f64-parcelninja.apiary-mock.com/api/v1/tracking/WIA1340707',
+		url: finalUrl,
 		headers :{
 		'Content-Type': 'application/json',
 		'Accept': 'application/json',
-		'Authorization': '6aed16cf-f549-43d1-9f16-07056ea8b1a3',	
+		'Authorization': 'Basic 6aed16cf-f549-43d1-9f16-07056ea8b1a3',	
 		}
 	}).then(function(response){
-		console.log(response);
-	})
+		trackStatus = response.data;
+		console.log(trackStatus);
+		if (trackStatus!== null) {
+		$location.path("/portal");
+	}
+	});
+	
 
+ }
+
+});
+
+
+//portal page controller
+app.controller("portalCtrl", function($scope,$location,$http,$window){
+	console.log(trackStatus);
 });
