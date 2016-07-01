@@ -49,6 +49,10 @@ body{
 	margin-left: 50px; 
 }
 
+.images{
+	margin-top: 16px; 
+}
+
 @media (max-width: 768px) {
 	.between {
 		visibility: hidden;
