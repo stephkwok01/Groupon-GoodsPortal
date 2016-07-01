@@ -19,8 +19,8 @@ body{
 
 /*progress page*/
 .progress {
-	height: 85px;
-	width: 85px;
+	height: 80px;
+	width: 80px;
 	border-radius: 50px; 
 	background-color: white;
 	border: 1px solid #48A431; 
@@ -45,15 +45,24 @@ body{
 	border: 1px solid #48A431; 
 }
 
+.estDelivery {
+	margin-left: 50px; 
+}
+
 @media (max-width: 768px) {
 	.between {
 		visibility: hidden;
 	}
 	.track{
 		display: block;
-		margin-top: -120px;
+		margin-top: -115px;
 		margin-left: 0px; 
 		padding: 0;
+	}
+	.progress {
+		height: 70px;
+		width: 70px;
+		margin-bottom: -3px;
 	}
 }
 
@@ -62,6 +71,9 @@ body{
 		width: 70px; 
 	}
 }
+
+
+
 
 
 
