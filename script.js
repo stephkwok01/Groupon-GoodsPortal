@@ -32,16 +32,27 @@ var finalUrl = URL + $scope.waybill;
 		console.log(trackStatus);
 		if (trackStatus!== null) {
 		$location.path("/portal");
-	}
+		}
 	});
-	
-
  }
-
 });
-
 
 //portal page controller
 app.controller("portalCtrl", function($scope,$location,$http,$window){
-	console.log(trackStatus);
+	console.log(trackStatus.status.description);
+	$scope.dateEst = "";
+	if(trackStatus.status.description === "Onboard - the parcel is onboard the Courier vehicle."){
+		$scope.fourthStyle = {
+			"background-color" : "#48A431",
+			"height" : "90px",
+			"width" : "90px"
+		}
+		$scope.dateEst = trackStatus.estDeliveryEndDate;
+	}
 });
+
+
+
+
+
+
