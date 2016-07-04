@@ -25,7 +25,7 @@
 	<div class="text-center">
 
 		<div class="track text-center trackOne">
-			<div class="progress" ng-style="firstStyle">
+			<div class="progress" ng-style="firstStyle" ng-mouseover="hover()" ng-mouseleave="hoverOver()">
 				<img class="images" ng-show="orderImage" src="./images/ordered_image.png"/>
 			</div>
 			<div class="steps"> Ordered </div>	
@@ -67,6 +67,8 @@
 	<!-- estimated delivery -->
 	<br><br>
 	<div class="estDelivery" ng-show="dateEst"> Estimated delivery date: {{dateEst}} </div>
+	<br>
+	<div class="hovering" ng-show="orderedHover"> Random stuff </div>
 </div>
 
 

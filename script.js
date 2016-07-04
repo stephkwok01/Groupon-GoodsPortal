@@ -49,9 +49,19 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 	$scope.deliverImage = true;
 	$scope.dateEst = "";
 
+	//sorting estimated delivery date
 	var year = trackStatus.estDeliveryEndDate.slice(0,4);
-    var month = trackStatus.estDeliveryEndDate.slice(4,6);
-    var day = trackStatus.estDeliveryEndDate.slice(6,8);
+  var month = trackStatus.estDeliveryEndDate.slice(4,6);
+  var day = trackStatus.estDeliveryEndDate.slice(6,8);
+
+  //hovering effect
+  $scope.hover = function() {
+  	$scope.orderedHover = true;
+  }
+
+  $scope.hoverOver = function(){
+  	$scope.orderedHover = false;
+  }
 
 	//package ordered 
 	if(trackStatus.status.description === "Odered") {//change the description later
