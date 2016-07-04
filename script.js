@@ -3,11 +3,11 @@ var app = angular.module("GrouponTrackApp", ["ngRoute"]);
 //config
 app.config(function($routeProvider) {
 	$routeProvider.when("/", {
-		templateUrl: "home.html"
+		templateUrl: "./templates/home.html"
 	})
   //portal page
   $routeProvider.when("/portal",{
-  	templateUrl: "portal.html"
+  	templateUrl: "./templates/portal.html"
   })
 }); //end of config
 
@@ -28,8 +28,13 @@ var finalUrl = URL + $scope.waybill;
 		}
 	}).then(function(response){
 		trackStatus = response.data;
-		if (trackStatus!== null) {
+		console.log(response.data.contactNo);
+		if (trackStatus!== null && $scope.user.mobile === response.data.contactNo) {
 		$location.path("/portal");
+		}
+		else {
+			$scope.user.mobile="";
+			$scope.waybill="";
 		}
 	});
  }
@@ -44,6 +49,10 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 	$scope.deliverImage = true;
 	$scope.dateEst = "";
 
+	var year = trackStatus.estDeliveryEndDate.slice(0,4);
+    var month = trackStatus.estDeliveryEndDate.slice(4,6);
+    var day = trackStatus.estDeliveryEndDate.slice(6,8);
+
 	//package ordered 
 	if(trackStatus.status.description === "Odered") {//change the description later
 		$scope.firstStyle = {
@@ -51,7 +60,7 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 			"height" : "90px",
 			"width" : "90px"
 		}
-		$scope.dateEst = trackStatus.estDeliveryEndDate;
+    $scope.dateEst = day + "/" + month + "/" + year;
 		$scope.orderImage = false;
 	}
 	//package processing
@@ -61,7 +70,7 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 			"height" : "90px",
 			"width" : "90px"
 		}
-		$scope.dateEst = trackStatus.estDeliveryEndDate;
+    $scope.dateEst = day + "/" + month + "/" + year;
 		$scope.processImage = false;
 	}
 	//packing preparing to ship
@@ -71,7 +80,7 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 			"height" : "90px",
 			"width" : "90px"
 		}
-		$scope.dateEst = trackStatus.estDeliveryEndDate;
+    $scope.dateEst = day + "/" + month + "/" + year;
 		$scope.prepImage = false;
 	}
 	//package in transit
@@ -81,7 +90,7 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 			"height" : "90px",
 			"width" : "90px"
 		}
-		$scope.dateEst = trackStatus.estDeliveryEndDate;
+    $scope.dateEst = day + "/" + month + "/" + year;
 		$scope.transitImage = false;
 	}
 	//package delivered 

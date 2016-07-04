@@ -17,6 +17,10 @@ body{
 	margin-left: 300px; 
 }
 
+.caption_button {
+	margin-left: 250px; 
+}
+
 /*progress page*/
 .progress {
 	height: 80px;
