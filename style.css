@@ -10,7 +10,11 @@ body{
 	width: 200px;
 }
 .trackerLogo {
+	color: #48A431;
 	float: right;
+	margin-right: 20px; 
+	font-size: 30px;
+	margin-top: 7px; 
 }
 .title {
 	color: #48A431;
@@ -48,7 +52,7 @@ body{
 	margin-bottom: 77px;
 	background-color: #48A431;
 	height: 3px; 
-	width: 120px; 
+	width: 110px; 
 	border: 1px solid #48A431; 
 }
 
@@ -85,12 +89,35 @@ body{
 		width: 70px;
 		margin-bottom: -3px;
 	}
+	.images{
+		height: 33px; 
+	}
+	.trackerLogo{
+		visibility: hidden;
+		font-size: 0px; 
+	}
 }
 
 @media (max-width: 1200px) and (min-width: 768px) {
 	.between{
 		width: 70px; 
+		margin-bottom: 73px;
 	}
+	.progress{
+		height: 75px;
+		width: 75px;
+	}
+	.images{
+		height: 35px; 
+	}
+	.tick{
+		height: 22px; 
+	}
+	.trackerLogo{
+		font-size: 25px;
+		margin-top: 12px; 
+	}
+
 }
 
 

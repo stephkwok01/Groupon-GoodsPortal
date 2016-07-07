@@ -47,6 +47,7 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 	$scope.processImage = true;
 	$scope.prepImage = true;
 	$scope.transitImage = true;
+	$scope.outImage = true;
 	$scope.deliverImage = true;
 	$scope.dateEst = "";
 
@@ -84,6 +85,13 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
   	$scope.transitText = false;
   }
 
+  $scope.outHover = function(){
+  	$scope.outText = true;
+  }
+  $scope.outHoverOver = function(){
+  	$scope.outText = false;
+  }
+
   $scope.delHover = function(){
   	$scope.deliverText= true;
   }
@@ -95,8 +103,8 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 	if(trackStatus.status.description === "Odered") {//change the description later
 		$scope.firstStyle = {
 			"background-color" : "#48A431",
-			"height" : "90px",
-			"width" : "90px"
+			"height" : "85px",
+			"width" : "85px"
 		}
     $scope.dateEst = day + "/" + month + "/" + year;
 		$scope.orderImage = false;
@@ -105,8 +113,8 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 	if(trackStatus.status.description === "Processing") {//change the description later
 		$scope.secondStyle = {
 			"background-color" : "#48A431",
-			"height" : "90px",
-			"width" : "90px"
+			"height" : "85px",
+			"width" : "85px"
 		}
     $scope.dateEst = day + "/" + month + "/" + year;
 		$scope.processImage = false;
@@ -115,8 +123,8 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 	if(trackStatus.status.description === "Preparing to ship") {//change the description later
 		$scope.thirdStyle = {
 			"background-color" : "#48A431",
-			"height" : "90px",
-			"width" : "90px"
+			"height" : "85px",
+			"width" : "85px"
 		}
     $scope.dateEst = day + "/" + month + "/" + year;
 		$scope.prepImage = false;
@@ -125,18 +133,30 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 	if(trackStatus.status.description === "Onboard - the parcel is onboard the Courier vehicle."){
 		$scope.fourthStyle = {
 			"background-color" : "#48A431",
-			"height" : "90px",
-			"width" : "90px"
+			"height" : "85px",
+			"width" : "85px"
 		}
     $scope.dateEst = day + "/" + month + "/" + year;
 		$scope.transitImage = false;
 	}
+
+	//package out for delivery
+	if(trackStatus.status.description === "Out for delivery."){ //change later
+		$scope.sixthStyle = {
+			"background-color" : "#48A431",
+			"height" : "85px",
+			"width" : "85px"
+		}
+    $scope.dateEst = day + "/" + month + "/" + year;
+		$scope.outImage = false;
+	}
+
 	//package delivered 
 	if(trackStatus.status.description === "delivered."){ //change later
 		$scope.fifthStyle = {
 			"background-color" : "#48A431",
-			"height" : "90px",
-			"width" : "90px"
+			"height" : "85px",
+			"width" : "85px"
 		}
 		$scope.dateEst = "Pacakge delivered" //change to delivered date
 		$scope.deliverImage = false;
