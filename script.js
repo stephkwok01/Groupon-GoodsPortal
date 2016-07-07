@@ -30,6 +30,7 @@ var finalUrl = URL + $scope.waybill;
 		trackStatus = response.data;
 		console.log(response.data.contactNo);
 		if (trackStatus!== null && $scope.user.mobile === response.data.contactNo) {
+			console.log(response.data);
 		$location.path("/portal");
 		}
 		else {
@@ -54,13 +55,40 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
   var month = trackStatus.estDeliveryEndDate.slice(4,6);
   var day = trackStatus.estDeliveryEndDate.slice(6,8);
 
-  //hovering effect
+  //hovering effect 
   $scope.hover = function() {
-  	$scope.orderedHover = true;
+  	$scope.orderedText = true;
+  }
+  $scope.hoverOver = function(){
+  	$scope.orderedText = false;
   }
 
-  $scope.hoverOver = function(){
-  	$scope.orderedHover = false;
+  $scope.processHover = function(){
+  	$scope.processText = true;
+  }
+  $scope.processHoverOver = function(){
+  	$scope.processText = false;
+  }
+
+  $scope.prepHover = function(){
+  	$scope.prepText = true;
+  }
+  $scope.prepHoverOver = function(){
+  	$scope.prepText = false;
+  }
+
+  $scope.transitHover = function(){
+  	$scope.transitText = true;
+  }
+  $scope.transitHoverOver = function(){
+  	$scope.transitText = false;
+  }
+
+  $scope.delHover = function(){
+  	$scope.deliverText= true;
+  }
+  $scope.delHoverOver = function(){
+  	$scope.deliverText = false;
   }
 
 	//package ordered 

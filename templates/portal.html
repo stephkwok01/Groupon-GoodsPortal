@@ -28,39 +28,39 @@
 			<div class="progress" ng-style="firstStyle" ng-mouseover="hover()" ng-mouseleave="hoverOver()">
 				<img class="images" ng-show="orderImage" src="./images/ordered_image.png"/>
 			</div>
-			<div class="steps"> Ordered </div>	
+			<div class="steps"> Payment confirmed </div>	
 		</div>
 		<div class="between"></div>
 
 		<div class="track text-center">
-			<div class="progress" ng-style="secondStyle">
+			<div class="progress" ng-style="secondStyle" ng-mouseover="processHover()" ng-mouseleave="processHoverOver()">
 				<img class="images" ng-show="processImage" src="./images/processing.png"/>
 			</div>
-			<div class="steps text-center"> Processing Order</div>	
+			<div class="steps text-center"> Processing Order </div>	
 		</div>
 		<div class="between"></div>
 
 		<div class="track text-center">
-			<div class="progress" ng-style="thirdStyle">
+			<div class="progress" ng-style="thirdStyle" ng-mouseover="prepHover()" ng-mouseleave="prepHoverOver()">
 				<img class="images" ng-show="prepImage" src="./images/processing.png"/>
 			</div>
-			<div class="steps text-center"> Preparing to Ship</div>
+			<div class="steps text-center"> Preparing to Ship </div>
 		</div>
 		<div class="between"></div>
 
 		<div class="track text-center">
-			<div class="progress" ng-style="fourthStyle">
+			<div class="progress" ng-style="fourthStyle" ng-mouseover="transitHover()" ng-mouseleave="transitHoverOver()">
 				<img class="images" ng-show="transitImage" src="./images/transit.png"/>
 			</div>
-			<div class="steps text-center"> In Transit</div>
+			<div class="steps text-center"> In Transit  </div>
 		</div>
 		<div class="between"></div>
 
 		<div class="track text-center">
-			<div class="progress" ng-style="fifthStyle">
+			<div class="progress" ng-style="fifthStyle" ng-mouseover="delHover()" ng-mouseleave="delHoverOver()">
 				<img class="tick" ng-show="deliverImage" src="http://www.messianicjudaism.me/agenda/files/1206574733930851359Ryan_Taylor_Green_Tick.svg_.thumb_.jpg"/>
 			</div>
-			<div class="steps text-center"> Delivered</div>
+			<div class="steps text-center"> Delivered </div>
 		</div>
 	</div>
 
@@ -68,7 +68,11 @@
 	<br><br>
 	<div class="estDelivery" ng-show="dateEst"> Estimated delivery date: {{dateEst}} </div>
 	<br>
-	<div class="hovering" ng-show="orderedHover"> Random stuff </div>
+	<div class="hovering" ng-show="orderedText"> Random stuff </div>
+	<div class="hovering" ng-show="processText" > Order is being processed </div>
+	<div class="hovering" ng-show="prepText"> Preparing to ship your item </div>
+	<div class="hovering" ng-show="transitText"> En route </div>
+	<div class="hovering" ng-show="deliverText"> delivery description <div>
 </div>
 
 
