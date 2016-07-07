@@ -9,6 +9,9 @@ body{
 	height:50px;
 	width: 200px;
 }
+.trackerLogo {
+	float: right;
+}
 .title {
 	color: #48A431;
 }
