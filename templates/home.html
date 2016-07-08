@@ -1,37 +1,140 @@
 <div ng-controller="homeCtrl">
   <!-- Navbar -->
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button> -->
-        <a class="navbar-brand" href="https://www.groupon.co.za/">
-          <img id="logo" alt="Brand" src="./groupon.png">
-        </a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      </div> --><!-- /.navbar-collapse -->
-      <span class="trackerLogo"> Groupon Tracker </span>
-    </div><!-- /.container-fluid -->
-  </nav>
+  <div class="containerOne">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button> -->
+          <a class="navbar-brand" href="https://www.groupon.co.za/">
+            <img id="logo" alt="Brand" src="./groupon.png">
+          </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        </div> --><!-- /.navbar-collapse -->
+        <span class="trackerLogo"> Groupon Tracker </span>
+      </div><!-- /.container-fluid -->
+    </nav>
 
-  <!-- user imput -> mobile number & waybill number -->
-  <div class="col-md-6 col-md-offset-3">
-    <br>  <br>  <br>  <br>
-    <h2 class="title">Enter Waybill Number</h2>
-    <form>
-      <input type="text"  ng-model="waybill" placeholder="Waybill Number">
-      <h2 class="title"> Enter Mobile Number</h2>
-      <input type="text"  ng-model="user.mobile" placeholder="Mobile Number">
-      <br> <br>          
-      <button ng-click="trackOrder()" class="caption_button">Track Order</button> 
-      <!-- <input id="submit" type="submit" ng-click="verify(user)" value="Submit"> -->
-    </form>
-  </div> 
+    <!-- user imput -> mobile number & waybill number -->
+    <div class="col-md-6 col-md-offset-3">
+      <br>  <br>  <br>  <br>
+      <h2 class="title">Enter Waybill Number</h2>
+      <form>
+        <input type="text"  ng-model="waybill" placeholder="Waybill Number">
+        <h2 class="title"> Enter Mobile Number</h2>
+        <input type="text"  ng-model="user.mobile" placeholder="Mobile Number">
+        <br> <br>          
+        <button ng-click="trackOrder()" class="caption_button">Track Order</button> 
+        <!-- <input id="submit" type="submit" ng-click="verify(user)" value="Submit"> -->
+      </form>
+    </div> 
+  </div>
+
+  <!-- footer -->
+  <div class="footer_container">
+    <div class="containerTwo">
+      <div class="row footer-context">
+        <section class="content_1 col-md-2 block text-center">
+          <div class="title_block">
+            <div class="title_block_name"> COMPANY </div>
+          </div>
+          <div class="footer-content">
+            <div class="aboutGroupon"> <a href="https://www.groupon.co.za/about-us">About&nbsp;Groupon</a></div>
+            <div class="jobs"> <a id="ls-footer-jobs" href="http://www.grouponjobs.co.za/" data-bhw="FooterLinkJobs" data-bhw-path="FooterSitemap|FooterLinkJobs">Jobs</a></div>
+            <div class="blog"><a id="ls-footer-blog" href="http://grouponblog.co.za/" data-bhw="FooterLinkBlog" data-bhw-path="FooterSitemap|FooterLinkBlog">Blog</a></div>
+            <div class="press"> <a id="ls-footer-press" href="https://www.groupon.co.za/presse" data-bhw="FooterLinkPress" data-bhw-path="FooterSitemap|FooterLinkPress">Press</a></div>
+          </div>
+        </section>
+        <section class="content_2 col-md-2 block text-center">
+          <div class="title_block">
+            <div class="title_block_name"> WORK WITH GROUPON </div>
+          </div>
+          <div class="footer-content">
+            <div class="runGrouponDeal"> <a id="ls-footer-deal" href="http://www.grouponworks.co.za/get-started/?utm_source=groupon.co.za_footer_links&amp;utm_medium=referral&amp;utm_campaign=ft_links" data-bhw="FooterLinkDeal" data-bhw-path="FooterSitemap|FooterLinkDeal" style="font-size: 11px;">Run a Groupon Deal</a> </div>
+            <div class="affiliateProgram"> <a id="ls-footer-affiliates" href="https://partner-int.groupon.com/login" data-bhw="FooterLinkAffiliates" data-bhw-path="FooterSitemap|FooterLinkAffiliates" style="font-size: 11px;">Affiliate Program</a> </div>
+          </div>
+        </section>
+        <section class="content_3 col-md-2 block text-center">
+          <div class="title_block"> 
+            <div class="title_block_name"> MORE </div>
+          </div>
+          <div class="footer-content">
+            <div class="customerSupport"> <a id="ls-footer-customer_support" href="https://www.groupon.co.za/customer_support" data-bhw="FooterLinkCustomerSupport" data-bhw-path="FooterSitemap|FooterLinkCustomerSupport">Customer Support</a> </div>
+            <div class="faq"> <a id="ls-footer-faq" href="https://www.groupon.co.za/faq" data-bhw="FooterLinkFaq" data-bhw-path="FooterSitemap|FooterLinkFaq">FAQ</a> </div>
+          </div>
+        </section>
+        <section class="content_4 col-md-2 block text-center">
+          <div class="title_block">
+            <div class="title_block_name"> FOLLOW US </div>
+          </div>
+          <div class="footer-content">
+            <p>
+              <a href="https://twitter.com/groupon_za">
+                <img src="https://www.grouponreturn.co.za/img/cms/twitter.jpg" width="30" height="30">
+              </a>
+              <a href="https://www.facebook.com/Groupon.za">
+                <img src="https://www.grouponreturn.co.za/img/cms/facebook.jpg" width="30" height="30">
+              </a>
+            </p>
+          </div>
+        </section>
+        <section class="content_5 col-md-4 block text-center">
+          <div class="footer-content">
+            <a href="https://www.groupon.co.za/mobile">
+              <img src="https://www.grouponreturn.co.za/img/cms/Mobile.png" width="230" height="90">
+            </a>
+          </div>
+        </section>
+        <section class="content_6 col-md-8 block">
+          <div class="title_block">
+            <div class="title_block_name"> UNBEATABLE DEALS FOR LOCAL ADVENTURES </div>
+          </div>
+          <div class="footer-content">
+            <p>
+              <span>
+                Groupon is an easy way to get huge discounts while discovering fun activities in your city. Our daily local deals consist of&nbsp;
+              </span>
+              <a id="ls-footer-restaurants-link" data-bhw="FooterGsmZALinkRestaurants" href="https://www.groupon.co.za/coupons/restaurants" data-bhw-path="FooterGSM|FooterGsmZALinkRestaurants">restaurants</a>
+              <span>,&nbsp;</span>
+              <a id="ls-footer-spas-link" data-bhw="FooterGsmZALinkSpas" href="https://www.groupon.co.za/coupons/spa" data-bhw-path="FooterGSM|FooterGsmZALinkSpas">spas</a>
+              <span>,&nbsp;</span>
+              <a id="ls-footer-hotels-link" data-bhw="FooterGsmZALinkHotels" href="https://www.groupon.co.za/getaways" data-bhw-path="FooterGSM|FooterGsmZALinkHotels">hotels</a>
+              <span>,&nbsp;</span>
+              <a id="ls-footer-massages-link" data-bhw="FooterGsmZALinkMassages" href="https://www.groupon.co.za/coupons/massage" data-bhw-path="FooterGSM|FooterGsmZALinkMassages">massages</a>
+              <span>,&nbsp;</span>
+              <a id="ls-footer-salons-link" data-bhw="FooterGsmZALinkSalons" href="https://www.groupon.co.za/coupons/salon" data-bhw-path="FooterGSM|FooterGsmZALinkSalons">salons</a>
+              <span>
+                ,&nbsp;
+                <a id="ls-footer-salons-link" data-bhw="FooterGsmZALinkSalons" href="https://www.groupon.co.za/coupons/salon" data-bhw-path="FooterGSM|FooterGsmZALinkSalons">salons</a>
+              </span>
+              <span>,&nbsp;</span>
+              <a id="ls-footer-activities-link" data-bhw="FooterGsmZALinkActivities" href="https://www.groupon.co.za/coupons/things-to-do" data-bhw-path="FooterGSM|FooterGsmZALinkActivities">things to do</a>
+              <span>, and a whole lot more, in hundreds of cities across the world.</span>
+            </p>
+          </div>
+        </section>
+        <section class="content_7 col-md-3 block text-center">
+          <div class="footer-content">
+            <p>
+              <a href="http://www.grouponworks.co.za/?utm_source=groupon.co.za_footer_links&amp;utm_medium=referral&amp;utm_campaign=ft_links" target="_blank">
+                <img src="https://www.grouponreturn.co.za/img/cms/Grow.png" alt="" width="230" height="90">
+              </a>
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
+
+
 

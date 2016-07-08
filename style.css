@@ -3,6 +3,32 @@ body{
 	padding: 0;	
 }
 
+/*footer*/
+.footer_container{
+	width: 100%;
+	height: 220px;
+	background-color: #222222;
+	margin-top: 430px;
+}
+a{
+	color: #9C9FA2;
+}
+.footer-context{
+	padding-top: 10px;
+	color: #9C9FA2;
+}
+
+.content_6 {
+	margin-left: -160px;
+	margin-top: 20px;
+}
+
+.content_7{
+	margin-left: -3px;
+	margin-top: 5px;
+}
+
+
 /*for tracking page*/
 #logo {
 	margin-top: -15px;
