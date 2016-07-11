@@ -4,22 +4,31 @@
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
-				<!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button> -->
+
 				<a class="navbar-brand" href="https://www.groupon.co.za/">
 					<img id="logo" alt="Brand" src="./groupon.png">
 				</a>
 			</div>
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			</div> --><!-- /.navbar-collapse -->
 			<span class="trackerLogo"> Groupon Tracker </span>
 		</div><!-- /.container-fluid -->
-	</nav>
+   <!-- header links -->
+   <div class="row header-links text-center">
+    <div class="col-md-12 header-container">
+      <div class="col-md-3 tags"> 
+        <a href="https://www.groupon.co.za/"> HOME </a>
+      </div>
+      <div class="col-md-3 tags">
+        <a href="https://www.groupon.co.za/browse/?context=local"> LOCAL </a>
+      </div>
+      <div class="col-md-3 tags">
+        <a href="http://www.groupon.co.za/goods"> GOODS </a>
+      </div>
+      <div class="col-md-3 tags">
+        <a href="https://www.groupon.co.za/getaways"> GETAWAYS </a>
+      </div>
+    </div>
+  </div>
+</nav>
 
 	<!-- progress bar -->
 	<br> <br> <br> <br>
@@ -77,12 +86,14 @@
 	<br><br>
 	<div class="estDelivery" ng-show="dateEst"> Estimated delivery date: {{dateEst}} </div>
 	<br>
+	<div class="allHover">
 	<div class="hovering" ng-show="orderedText"> Random stuff </div>
 	<div class="hovering" ng-show="processText" > Order is being processed </div>
 	<div class="hovering" ng-show="prepText"> Preparing to ship your item </div>
 	<div class="hovering" ng-show="transitText"> On the way to distribution center </div>
 	<div class="hovering" ng-show="outText"> En route </div>
 	<div class="hovering" ng-show="deliverText"> delivery description </div>
+	</div>
   <!-- footer -->
   <div class="footer_container_portal">
     <div class="containerTwo">
