@@ -23,7 +23,7 @@ var URL = "http://stormy-reaches-65962.herokuapp.com/?url=https://www.parcelninj
  	$http({
 		method: "GET",
 		url: finalUrl,
-		hearders :{
+		data :{
 		'Content-Type': 'application/json',
 		'Accept': 'application/json',
 		'username': '0d4b1c4d-6dd0-4a75-9a0a-46e54be70b76',
