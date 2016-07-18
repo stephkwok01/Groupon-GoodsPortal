@@ -44,7 +44,7 @@ a{
 	color: #9C9FA2;
 }
 
-a:hover{
+a:hover{  
 	color: #9C9FA2;
 }
 
@@ -69,7 +69,7 @@ a:hover{
 
 .content_7{
 	margin-left: -3px;
-	margin-top: 5px;
+	margin-top: 5px;ste
 }
 
 /*for tracking page*/
@@ -172,6 +172,9 @@ a:hover{
 	.trackerLogo{
 		visibility: hidden;
 		font-size: 0px; 
+	}
+	.allHover {
+		display: none;
 	}
 	/*footer stuff*/
 	.footer_container, .footer_container_portal{
