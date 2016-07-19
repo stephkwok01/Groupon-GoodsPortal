@@ -31,7 +31,7 @@
 </nav>
 
 	<!-- progress bar -->
-	<br> <br> <br> <br>
+	<br> <br> <br>
 	<div class="text-center">
 
 		<div class="track text-center trackOne">
@@ -84,15 +84,22 @@
 
 	<!-- estimated delivery -->
 	<br><br>
-	<div class="estDelivery" ng-show="dateEst"> Estimated delivery date: {{dateEst}} </div>
+  <div class="DeliveryInfo" ng-show="dateEst"> <strong> Estimated delivery date: </strong> {{dateEst}} </div>
+  <div class="DeliveryInfo"> <strong> Tracking Number: </strong> {{trackingNum}} </div>
+  <div class="DeliveryInfo"> <strong> Time Stamp: </strong> {{currentTimeStamp}} </div>
+  <div class="DeliveryInfo"> <strong>Courier company: </strong> {{courierDetail}} </div>
 	<br>
 	<div class="allHover">
-  	<div class="hovering" ng-show="orderedText"> Random stuff </div>
-  	<div class="hovering" ng-show="processText" > Order is being processed </div>
-  	<div class="hovering" ng-show="prepText"> Preparing to ship your item </div>
-  	<div class="hovering" ng-show="transitText"> On the way to distribution center </div>
-  	<div class="hovering" ng-show="outText"> En route </div>
-  	<div class="hovering" ng-show="deliverText"> delivery description </div>
+  	<div class="hovering" ng-show="orderedText"> Order confirmed </div>
+  	<div class="hovering" ng-show="processText" > Item in picking queue </div>
+  	<div class="hovering" ng-show="prepText"> Item ready to be packed </div>
+  	<div class="hovering" ng-show="transitText"> Item on its way to distribution center </div>
+  	<div class="hovering" ng-show="outText"> Item dispatched with courier </div>
+  	<div class="hovering" ng-show="deliverText"> 
+      <p> Delivery Signed By {{signedBy}} </p>
+    </div>
+    <div class="hovering" ng-show="deliverSoonText"> Your package is on its way </div>
+
 	</div>
   <!-- footer -->
   <div class="footer_container_portal">
@@ -103,10 +110,10 @@
             <div class="title_block_name"> COMPANY </div>
           </div>
           <div class="footer-content">
-            <div class="aboutGroupon"> <a href="https://www.groupon.co.za/about-us" style="font-size: 12px;">About&nbsp;Groupon</a></div>
-            <div class="jobs"> <a id="ls-footer-jobs" href="http://www.grouponjobs.co.za/" data-bhw="FooterLinkJobs" data-bhw-path="FooterSitemap|FooterLinkJobs" style="font-size: 12px;">Jobs</a></div>
-            <div class="blog"><a id="ls-footer-blog" href="http://grouponblog.co.za/" data-bhw="FooterLinkBlog" data-bhw-path="FooterSitemap|FooterLinkBlog" style="font-size: 12px;">Blog</a></div>
-            <div class="press"> <a id="ls-footer-press" href="https://www.groupon.co.za/presse" data-bhw="FooterLinkPress" data-bhw-path="FooterSitemap|FooterLinkPress" style="font-size: 12px;">Press</a></div>
+            <div class="aboutGroupon"> <a href="https://www.groupon.co.za/about-us" style="font-size: 11px;">About&nbsp;Groupon</a></div>
+            <div class="jobs"> <a id="ls-footer-jobs" href="http://www.grouponjobs.co.za/" data-bhw="FooterLinkJobs" data-bhw-path="FooterSitemap|FooterLinkJobs" style="font-size: 11px;">Jobs</a></div>
+            <div class="blog"><a id="ls-footer-blog" href="http://grouponblog.co.za/" data-bhw="FooterLinkBlog" data-bhw-path="FooterSitemap|FooterLinkBlog" style="font-size: 11px;">Blog</a></div>
+            <div class="press"> <a id="ls-footer-press" href="https://www.groupon.co.za/presse" data-bhw="FooterLinkPress" data-bhw-path="FooterSitemap|FooterLinkPress" style="font-size: 11px;">Press</a></div>
           </div>
         </section>
         <section class="content_2 col-md-2 block text-center">
@@ -114,8 +121,8 @@
             <div class="title_block_name"> WORK WITH GROUPON </div>
           </div>
           <div class="footer-content">
-            <div class="runGrouponDeal"> <a id="ls-footer-deal" href="http://www.grouponworks.co.za/get-started/?utm_source=groupon.co.za_footer_links&amp;utm_medium=referral&amp;utm_campaign=ft_links" data-bhw="FooterLinkDeal" data-bhw-path="FooterSitemap|FooterLinkDeal" style="font-size: 12px;">Run a Groupon Deal</a> </div>
-            <div class="affiliateProgram"> <a id="ls-footer-affiliates" href="https://partner-int.groupon.com/login" data-bhw="FooterLinkAffiliates" data-bhw-path="FooterSitemap|FooterLinkAffiliates" style="font-size: 12px;">Affiliate Program</a> </div>
+            <div class="runGrouponDeal"> <a id="ls-footer-deal" href="http://www.grouponworks.co.za/get-started/?utm_source=groupon.co.za_footer_links&amp;utm_medium=referral&amp;utm_campaign=ft_links" data-bhw="FooterLinkDeal" data-bhw-path="FooterSitemap|FooterLinkDeal" style="font-size: 11px;">Run a Groupon Deal</a> </div>
+            <div class="affiliateProgram"> <a id="ls-footer-affiliates" href="https://partner-int.groupon.com/login" data-bhw="FooterLinkAffiliates" data-bhw-path="FooterSitemap|FooterLinkAffiliates" style="font-size: 11px;">Affiliate Program</a> </div>
           </div>
         </section>
         <section class="content_3 col-md-2 block text-center">
@@ -123,8 +130,8 @@
             <div class="title_block_name"> MORE </div>
           </div>
           <div class="footer-content">
-            <div class="customerSupport"> <a id="ls-footer-customer_support" href="https://www.groupon.co.za/customer_support" data-bhw="FooterLinkCustomerSupport" style="font-size: 12px;" data-bhw-path="FooterSitemap|FooterLinkCustomerSupport">Customer Support</a> </div>
-            <div class="faq"> <a id="ls-footer-faq" href="https://www.groupon.co.za/faq" style="font-size: 12px;" data-bhw="FooterLinkFaq" data-bhw-path="FooterSitemap|FooterLinkFaq">FAQ</a> </div>
+            <div class="customerSupport"> <a id="ls-footer-customer_support" href="https://www.groupon.co.za/customer_support" data-bhw="FooterLinkCustomerSupport" style="font-size: 11px;" data-bhw-path="FooterSitemap|FooterLinkCustomerSupport">Customer Support</a> </div>
+            <div class="faq"> <a id="ls-footer-faq" href="https://www.groupon.co.za/faq" style="font-size: 11px;" data-bhw="FooterLinkFaq" data-bhw-path="FooterSitemap|FooterLinkFaq">FAQ</a> </div>
           </div>
         </section>
         <section class="content_4 col-md-2 block text-center">
@@ -155,22 +162,22 @@
           </div>
           <div class="footer-content">
             <p>
-              <span style="font-size: 12px;">
+              <span style="font-size: 11px;">
                 Groupon is an easy way to get huge discounts while discovering fun activities in your city. Our daily local deals consist of&nbsp;
               </span>
-              <a id="ls-footer-restaurants-link" data-bhw="FooterGsmZALinkRestaurants" href="https://www.groupon.co.za/coupons/restaurants" data-bhw-path="FooterGSM|FooterGsmZALinkRestaurants" style="font-size: 12px;">restaurants</a>
+              <a id="ls-footer-restaurants-link" data-bhw="FooterGsmZALinkRestaurants" href="https://www.groupon.co.za/coupons/restaurants" data-bhw-path="FooterGSM|FooterGsmZALinkRestaurants" style="font-size: 11px;">restaurants</a>
               <span>,&nbsp;</span>
-              <a id="ls-footer-spas-link" data-bhw="FooterGsmZALinkSpas" href="https://www.groupon.co.za/coupons/spa" data-bhw-path="FooterGSM|FooterGsmZALinkSpas" style="font-size: 12px;">spas</a>
+              <a id="ls-footer-spas-link" data-bhw="FooterGsmZALinkSpas" href="https://www.groupon.co.za/coupons/spa" data-bhw-path="FooterGSM|FooterGsmZALinkSpas" style="font-size: 11px;">spas</a>
               <span>,&nbsp;</span>
-              <a id="ls-footer-hotels-link" data-bhw="FooterGsmZALinkHotels" href="https://www.groupon.co.za/getaways" data-bhw-path="FooterGSM|FooterGsmZALinkHotels" style="font-size: 12px;">hotels</a>
+              <a id="ls-footer-hotels-link" data-bhw="FooterGsmZALinkHotels" href="https://www.groupon.co.za/getaways" data-bhw-path="FooterGSM|FooterGsmZALinkHotels" style="font-size: 11px;">hotels</a>
               <span>,&nbsp;</span>
-              <a id="ls-footer-massages-link" data-bhw="FooterGsmZALinkMassages" href="https://www.groupon.co.za/coupons/massage" data-bhw-path="FooterGSM|FooterGsmZALinkMassages" style="font-size: 12px;">massages</a>
+              <a id="ls-footer-massages-link" data-bhw="FooterGsmZALinkMassages" href="https://www.groupon.co.za/coupons/massage" data-bhw-path="FooterGSM|FooterGsmZALinkMassages" style="font-size: 11px;">massages</a>
               <span>,&nbsp;</span>
-                <a id="ls-footer-salons-link" data-bhw="FooterGsmZALinkSalons" href="https://www.groupon.co.za/coupons/salon" data-bhw-path="FooterGSM|FooterGsmZALinkSalons" style="font-size: 12px;">salons</a>
+                <a id="ls-footer-salons-link" data-bhw="FooterGsmZALinkSalons" href="https://www.groupon.co.za/coupons/salon" data-bhw-path="FooterGSM|FooterGsmZALinkSalons" style="font-size: 11px;">salons</a>
               </span>
               <span>,&nbsp;</span>
-              <a id="ls-footer-activities-link" data-bhw="FooterGsmZALinkActivities" href="https://www.groupon.co.za/coupons/things-to-do" data-bhw-path="FooterGSM|FooterGsmZALinkActivities" style="font-size: 12px;">things to do</a>
-              <span style="font-size: 12px;">, and a whole lot more, in hundreds of cities across the world.</span>
+              <a id="ls-footer-activities-link" data-bhw="FooterGsmZALinkActivities" href="https://www.groupon.co.za/coupons/things-to-do" data-bhw-path="FooterGSM|FooterGsmZALinkActivities" style="font-size: 11px;">things to do</a>
+              <span style="font-size: 11px;">, and a whole lot more, in hundreds of cities across the world.</span>
             </p>
           </div>
         </section>

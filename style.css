@@ -6,6 +6,7 @@ body{
 /*header */
 .header{
 	background-color: #222222;
+	height: 50px;
 }
 
 .header-container{
@@ -25,6 +26,17 @@ body{
 	border-right: 1px solid #D8D8D8;
 }
 
+/*middle stuff*/
+.error{
+	margin-top: 10px; 
+	color: red;	
+}
+
+.inputInfo{
+	padding-right: 50px; 
+	margin-right: 115px;
+}
+
 /*footer*/
 .footer_container{
 	width: 100%;
@@ -38,6 +50,16 @@ body{
 	height: 220px;
 	background-color: #222222;
 	margin-top: 70px;
+}
+
+.title_block_name{
+	font-family: "Helvetica";
+	font-size: 14px;
+}
+
+.footer-content {
+	/*line-height: 15px;*/
+	/*font-size: 8px;*/
 }
 
 a{
@@ -56,7 +78,6 @@ a:hover{
 	padding-top: 15px;
 	color: #9C9FA2;
 }
-
 
 .content_6 {
 	margin-left: -160px;
@@ -129,8 +150,10 @@ a:hover{
 	height: 20px;
 }
 
-.estDelivery {
-	margin-left: 50px; 
+.DeliveryInfo{
+	margin-left: 50px;
+	margin-top: 5px;
+	font-size: 14px; 
 }
 
 .images{

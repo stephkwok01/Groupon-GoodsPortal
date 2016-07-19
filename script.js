@@ -14,12 +14,12 @@ app.config(function($routeProvider) {
 var trackStatus = {};
 //home page controller
 app.controller("homeCtrl", function($scope,$location,$http,$window){
+	$scope.findError= false;
 
 var URL = "http://stormy-reaches-65962.herokuapp.com/?url=https://www.parcelninja.co.za/api/v1/tracking/";
  $scope.trackOrder = function(string) {
- 	var finalUrl = URL + $scope.waybill;
+ 	var finalUrl = URL + $scope.waybill + "/events";
  	console.log($scope.waybill);
-	console.log(finalUrl);
  	$http({
 		method: "GET",
 		url: finalUrl,
@@ -33,13 +33,13 @@ var URL = "http://stormy-reaches-65962.herokuapp.com/?url=https://www.parcelninj
 
 	}).then(function(response){
 		trackStatus = response.data; 
-		// console.log(response.data.contactNo);
 		if (trackStatus!== null && trackStatus.trackingNo === $scope.waybill) {
 			console.log(response.data);
 			$location.path("/portal");
 		}
 		else {
 		// 	$scope.user.mobile="";
+			$scope.findError = true; 
 			$scope.waybill="";
 		}
 	});
@@ -56,12 +56,16 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 	$scope.outImage = true;
 	$scope.deliverImage = true;
 	$scope.dateEst = "";
+	$scope.courierDetail="";
 
 	//sorting estimated delivery date
 	var year = trackStatus.estDeliveryEndDate.slice(0,4);
   var month = trackStatus.estDeliveryEndDate.slice(4,6);
   var day = trackStatus.estDeliveryEndDate.slice(6,8);
-
+  var yearStamp = trackStatus.status.timeStamp.slice(0,4);
+  var monthStamp = trackStatus.status.timeStamp.slice(4,6);
+  var dayStamp = trackStatus.status.timeStamp.slice(6,8);
+  
   //hovering effect 
   $scope.hover = function() {
   	$scope.orderedText = true;
@@ -99,20 +103,31 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
   }
 
   $scope.delHover = function(){
-  	$scope.deliverText= true;
+  	if(trackStatus.status.description === "Pod Received" || trackStatus.status.description === "Delivered") {
+  		$scope.deliverText= true;
+	  	$scope.signedBy = trackStatus.signedBy;
+  	}
+  	else {
+  		$scope.deliverSoonText = true; 
+  	}
   }
   $scope.delHoverOver = function(){
   	$scope.deliverText = false;
+  	$scope.deliverSoonText = false; 
   }
 
 	//package ordered 
+
 	if(trackStatus.status.description === "ordered") {
 		$scope.firstStyle = {
 			"background-color" : "#48A431",
 			"height" : "85px",
 			"width" : "85px"
 		}
-    $scope.dateEst = day + "/" + month + "/" + year;
+		$scope.dateEst = day + "/" + month + "/" + year;
+		$scope.currentTimeStamp = dayStamp + "/" + monthStamp + "/" + yearStamp;
+		$scope.trackingNum = trackStatus.trackingNo;
+		$scope.courierDetail= trackStatus.courier;
 		$scope.orderImage = false;
 	}
 	//package processing
@@ -122,7 +137,10 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 			"height" : "85px",
 			"width" : "85px"
 		}
-    $scope.dateEst = day + "/" + month + "/" + year;
+		$scope.dateEst = day + "/" + month + "/" + year;
+		$scope.currentTimeStamp = dayStamp + "/" + monthStamp + "/" + yearStamp;
+		$scope.trackingNum = trackStatus.trackingNo;
+		$scope.courierDetail= trackStatus.courier;
 		$scope.processImage = false;
 	}
 	//packing preparing to ship
@@ -132,17 +150,23 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 			"height" : "85px",
 			"width" : "85px"
 		}
-    $scope.dateEst = day + "/" + month + "/" + year;
+		$scope.dateEst = day + "/" + month + "/" + year;
+		$scope.currentTimeStamp = dayStamp + "/" + monthStamp + "/" + yearStamp;
+		$scope.trackingNum = trackStatus.trackingNo;
+		$scope.courierDetail= trackStatus.courier;
 		$scope.prepImage = false;
 	}
 	//package in transit
-	else if(trackStatus.status.description === "Off Manifest" || trackStatus.status.description === "Shipment Has Been Dispatched"){
+	else if(trackStatus.status.description === "Parcel Has Left Dawn Wing" || trackStatus.status.description === "Shipment Has Been Dispatched"){
 		$scope.fourthStyle = {
 			"background-color" : "#48A431",
 			"height" : "85px",
 			"width" : "85px"
 		}
-    $scope.dateEst = day + "/" + month + "/" + year;
+		$scope.dateEst = day + "/" + month + "/" + year;
+		$scope.currentTimeStamp = dayStamp + "/" + monthStamp + "/" + yearStamp;
+		$scope.trackingNum = trackStatus.trackingNo;
+		$scope.courierDetail= trackStatus.courier;
 		$scope.transitImage = false;
 	}
 
@@ -153,7 +177,10 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 			"height" : "85px",
 			"width" : "85px"
 		}
-    $scope.dateEst = day + "/" + month + "/" + year;
+		$scope.dateEst = day + "/" + month + "/" + year;
+		$scope.currentTimeStamp = dayStamp + "/" + monthStamp + "/" + yearStamp;
+		$scope.trackingNum = trackStatus.trackingNo;
+		$scope.courierDetail= trackStatus.courier;
 		$scope.outImage = false;
 	}
 
@@ -164,7 +191,10 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 			"height" : "85px",
 			"width" : "85px"
 		}
-		$scope.dateEst = "Pacakge delivered" //change to delivered date
+		$scope.dateEst = "Pacakge delivered";
+		$scope.currentTimeStamp = dayStamp + "/" + monthStamp + "/" + yearStamp;
+		$scope.trackingNum = trackStatus.trackingNo;
+		$scope.courierDetail= trackStatus.courier;
 		$scope.deliverImage = false;
 	}
 	else {
@@ -173,6 +203,10 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 			"height" : "85px",
 			"width" : "85px"
 		}
+		$scope.dateEst = day + "/" + month + "/" + year;
+		$scope.currentTimeStamp = dayStamp + "/" + monthStamp + "/" + yearStamp;
+		$scope.trackingNum = trackStatus.trackingNo;
+		$scope.courierDetail= trackStatus.courier;
 		$scope.prepImage = false;
 	}
 });
