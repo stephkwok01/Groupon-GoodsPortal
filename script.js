@@ -49,6 +49,10 @@ var URL = "http://stormy-reaches-65962.herokuapp.com/?url=https://www.parcelninj
 
 //portal page controller
 app.controller("portalCtrl", function($scope,$location,$http,$window){
+	if(!trackStatus.contactNo){
+		$location.path("/");
+	}
+
 	$scope.orderImage = true;
 	$scope.processImage = true;
 	$scope.prepImage = true;
@@ -66,6 +70,7 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
   var monthStamp = trackStatus.status.timeStamp.slice(4,6);
   var dayStamp = trackStatus.status.timeStamp.slice(6,8);
   
+
   //hovering effect 
   $scope.hover = function() {
   	$scope.orderedText = true;
@@ -191,7 +196,7 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 			"height" : "85px",
 			"width" : "85px"
 		}
-		$scope.dateEst = "Pacakge delivered";
+		$scope.dateEst = "Package delivered";
 		$scope.currentTimeStamp = dayStamp + "/" + monthStamp + "/" + yearStamp;
 		$scope.trackingNum = trackStatus.trackingNo;
 		$scope.courierDetail= trackStatus.courier;
