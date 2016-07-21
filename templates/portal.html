@@ -31,7 +31,7 @@
 </nav>
 
 	<!-- progress bar -->
-	<br> <br> <br>
+	<br> 
 	<div class="text-center">
 
 		<div class="track text-center trackOne">
@@ -84,21 +84,23 @@
 
 	<!-- estimated delivery -->
 	<br><br>
-  <div class="DeliveryInfo" ng-show="dateEst"> <strong> Estimated delivery date: </strong> {{dateEst}} </div>
-  <div class="DeliveryInfo"> <strong> Tracking Number: </strong> {{trackingNum}} </div>
-  <div class="DeliveryInfo"> <strong> Time Stamp: </strong> {{currentTimeStamp}} </div>
-  <div class="DeliveryInfo"> <strong>Courier company: </strong> {{courierDetail}} </div>
-	<br>
+  <div class="deliverydiv">
+    <div class="DeliveryInfo" ng-show="dateEst"> <strong> Estimated delivery date: </strong> {{dateEst}} </div>
+    <div class="DeliveryInfo"> <strong> Tracking Number: </strong> {{trackingNum}} </div>
+    <div class="DeliveryInfo"> <strong> Time Stamp: </strong> {{currentTimeStamp}} </div>
+    <div class="DeliveryInfo"> <strong>Courier: </strong> {{courierDetail}} </div>
+    <div class="DeliveryInfo"> <strong> Courier Contact Number: </strong> {{courierContact}} </div>
+  </div>
 	<div class="allHover">
-  	<div class="hovering" ng-show="orderedText"> Order confirmed </div>
-  	<div class="hovering" ng-show="processText" > Item in picking queue </div>
-  	<div class="hovering" ng-show="prepText"> Item ready to be packed </div>
-  	<div class="hovering" ng-show="transitText"> Item on its way to distribution center </div>
-  	<div class="hovering" ng-show="outText"> Item dispatched with courier </div>
+  	<div class="hovering" ng-show="orderedText"> Your payment has been validated </div>
+  	<div class="hovering" ng-show="processText" > Your order is being picked and packed </div>
+  	<div class="hovering" ng-show="prepText"> Handing your goodies to carrier </div>
+  	<div class="hovering" ng-show="transitText"> Goodies en route to carrier hub </div>
+  	<div class="hovering" ng-show="outText"> Goodies en route to you </div>
   	<div class="hovering" ng-show="deliverText"> 
       <p> Delivery Signed By {{signedBy}} </p>
     </div>
-    <div class="hovering" ng-show="deliverSoonText"> Your package is on its way </div>
+    <div class="hovering" ng-show="deliverSoonText"> Delivered </div>
 
 	</div>
   <!-- footer -->
