@@ -61,6 +61,7 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 	$scope.deliverImage = true;
 	$scope.dateEst = "";
 	$scope.courierDetail="";
+	$scope.courierContact ="";
 
 	//sorting estimated delivery date
 	var year = trackStatus.estDeliveryEndDate.slice(0,4);
@@ -133,6 +134,7 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 		$scope.currentTimeStamp = dayStamp + "/" + monthStamp + "/" + yearStamp;
 		$scope.trackingNum = trackStatus.trackingNo;
 		$scope.courierDetail= trackStatus.courier;
+		$scope.courierContact = trackStatus.contactNo;
 		$scope.orderImage = false;
 	}
 	//package processing
@@ -146,6 +148,7 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 		$scope.currentTimeStamp = dayStamp + "/" + monthStamp + "/" + yearStamp;
 		$scope.trackingNum = trackStatus.trackingNo;
 		$scope.courierDetail= trackStatus.courier;
+		$scope.courierContact = trackStatus.contactNo;
 		$scope.processImage = false;
 	}
 	//packing preparing to ship
@@ -159,6 +162,7 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 		$scope.currentTimeStamp = dayStamp + "/" + monthStamp + "/" + yearStamp;
 		$scope.trackingNum = trackStatus.trackingNo;
 		$scope.courierDetail= trackStatus.courier;
+		$scope.courierContact = trackStatus.contactNo;
 		$scope.prepImage = false;
 	}
 	//package in transit
@@ -172,6 +176,7 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 		$scope.currentTimeStamp = dayStamp + "/" + monthStamp + "/" + yearStamp;
 		$scope.trackingNum = trackStatus.trackingNo;
 		$scope.courierDetail= trackStatus.courier;
+		$scope.courierContact = trackStatus.contactNo;
 		$scope.transitImage = false;
 	}
 
@@ -186,6 +191,7 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 		$scope.currentTimeStamp = dayStamp + "/" + monthStamp + "/" + yearStamp;
 		$scope.trackingNum = trackStatus.trackingNo;
 		$scope.courierDetail= trackStatus.courier;
+		$scope.courierContact = trackStatus.contactNo;
 		$scope.outImage = false;
 	}
 
@@ -200,6 +206,7 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 		$scope.currentTimeStamp = dayStamp + "/" + monthStamp + "/" + yearStamp;
 		$scope.trackingNum = trackStatus.trackingNo;
 		$scope.courierDetail= trackStatus.courier;
+		$scope.courierContact = trackStatus.contactNo;
 		$scope.deliverImage = false;
 	}
 	else {
@@ -212,6 +219,7 @@ app.controller("portalCtrl", function($scope,$location,$http,$window){
 		$scope.currentTimeStamp = dayStamp + "/" + monthStamp + "/" + yearStamp;
 		$scope.trackingNum = trackStatus.trackingNo;
 		$scope.courierDetail= trackStatus.courier;
+		$scope.courierContact = trackStatus.contactNo;
 		$scope.prepImage = false;
 	}
 });
